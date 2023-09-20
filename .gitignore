@@ -5,4 +5,7 @@
 Debug/
 Drivers/
 .DS_Store
-
+.cproject
+.mxproject
+.project
+.settings/
