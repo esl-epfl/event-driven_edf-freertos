@@ -4,4 +4,5 @@
 *.cfg
 Debug/
 Drivers/
+.DS_Store
 
