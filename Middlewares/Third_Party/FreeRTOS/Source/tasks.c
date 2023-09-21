@@ -40,6 +40,16 @@ task.h is included from an application file. */
 #include "timers.h"
 #include "stack_macros.h"
 
+#include "nsprs_drivers.h"//ht: timing
+#include "nsprs_sys_srvc.h" //ht: timing
+
+unsigned int time_start=0; //ht: timing
+unsigned int time_end=0;
+unsigned int time_overal=0;
+unsigned int time_overal_add=0;
+int time_number = 0;
+int time_number_add =0;
+
 /* Lint e9021, e961 and e750 are suppressed as a MISRA exception justified
 because the MPU ports require MPU_WRAPPERS_INCLUDED_FROM_API_FILE to be defined
 for the header files above, but not in this file, in order to generate the
@@ -228,25 +238,44 @@ count overflows. */
 /*ht: using vListInsert to put it in order */
 /*ht: a function was added here for updating the state_item value :)*/
 /*ht: I also update deadline for static tasks, bc I want to check when they are issued they will meet their deadline or not */
+//ht: timing
 #if ( configDYNAMIC_SCHEDULING == 1 )
 	#define prvAddTaskToReadyList( pxTCB )																	\
 		traceMOVED_TASK_TO_READY_STATE( pxTCB );															\
+		time_number_add++;\
+		time_start = timer_read(2);\
 		if (pxTCB->xDeadlineRel == portMAX_DELAY)															\
 			pxTCB->xDeadlineAbs = portMAX_DELAY;															\
 		else																								\
 			pxTCB->xDeadlineAbs = pxTCB->xDeadlineRel + xTickCount;											\
 		listSET_LIST_ITEM_VALUE( &( pxTCB->xStateListItem ), pxTCB->xDeadlineAbs );	\
 		vListInsert( pxReadyTasksList , &(  pxTCB->xStateListItem ) ); 										\
+		time_end=timer_read(2); \
+		if (time_end>time_start){\
+			time_overal_add += (time_end-time_start);\
+		}\
+		else{\
+			time_overal_add += timer_readMax(2)-time_start+time_end;\
+		}\
 		tracePOST_MOVED_TASK_TO_READY_STATE( pxTCB )
 #else
 	#define prvAddTaskToReadyList( pxTCB )																\
 		traceMOVED_TASK_TO_READY_STATE( pxTCB );														\
+		time_number_add++;\
+		time_start = timer_read(2);\
 		taskRECORD_READY_PRIORITY( ( pxTCB )->uxPriority );												\
 		if (pxTCB->xDeadlineRel == portMAX_DELAY)															\	
 			pxTCB->xDeadlineAbs = portMAX_DELAY;															\
 		else																								\
 			pxTCB->xDeadlineAbs = pxTCB->xDeadlineRel + xTickCount;											\
 		vListInsertEnd( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+		time_end=timer_read(2); \
+		if (time_end>time_start){\
+			time_overal_add += (time_end-time_start);\
+		}\
+		else{\
+			time_overal_add += timer_readMax(2)-time_start+time_end;\
+		}\
 		tracePOST_MOVED_TASK_TO_READY_STATE( pxTCB )
 #endif
 
@@ -3268,6 +3297,9 @@ BaseType_t xSwitchRequired = pdFALSE;
 
 void vTaskSwitchContext( void )
 {
+ 	time_number++;	//ht: timing
+	time_start=timer_read(2); //ht: timing
+
 	if( uxSchedulerSuspended != ( UBaseType_t ) pdFALSE )
 	{
 		/* The scheduler is currently suspended - do not allow a context
@@ -3342,6 +3374,15 @@ void vTaskSwitchContext( void )
 		}
 		#endif /* configUSE_NEWLIB_REENTRANT */
 	}
+	time_end=timer_read(2); //ht: timing
+	if (time_end>time_start){
+		time_overal += (time_end-time_start);
+	}
+	else{
+		time_overal += timer_readMax(2)-time_start+time_end;
+	}
+	// printf("context_switch time: %lu, number:%d\r\n", time_overal, time_number);
+
 }
 /*-----------------------------------------------------------*/
 

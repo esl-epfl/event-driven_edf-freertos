@@ -44,7 +44,9 @@ unsigned int timer_readMs(int timer_id){
 unsigned int timer_readUs(int timer_id){
 	return _platform_timer_readUs(timer_id);
 }
-
+unsigned int timer_read(int timer_id){
+	return _platform_timer_read(timer_id);
+}
 void timer_stopReset(int timer_id){
 	_platform_timer_stopReset(timer_id);
 }

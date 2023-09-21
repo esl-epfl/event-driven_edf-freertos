@@ -1,0 +1,11 @@
+nsprs_app_srvc.c:39:6:launch_asBasicMachine	24	static
+nsprs_app_srvc.c:43:6:delete_asBasicMachine	8	static
+nsprs_app_srvc.c:49:6:create_asSems	8	static,ignoring_inline_asm
+nsprs_app_srvc.c:59:6:delete_asSems	8	static
+nsprs_app_srvc.c:67:6:asBasicMachine_t	32	static
+nsprs_app_srvc.c:100:17:asInit	16	static
+nsprs_app_srvc.c:158:17:asHeatup	16	static
+nsprs_app_srvc.c:200:17:asReady	16	static
+nsprs_app_srvc.c:264:17:asBrewing	16	static
+nsprs_app_srvc.c:378:17:asPoweroff	16	static
+nsprs_app_srvc.c:433:17:asTest	24	static

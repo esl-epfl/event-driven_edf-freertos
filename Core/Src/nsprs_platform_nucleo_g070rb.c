@@ -209,6 +209,18 @@ unsigned int _platform_timer_readUs(int timer_id){
 	time_us = CR * (_platform_timer_readPeriodUs(timer_id));
 	return time_us;
 }
+unsigned int _platform_timer_read(int timer_id){
+	unsigned int CR;
+	unsigned int time;
+	if (timer_id == 1){
+		CR = TIM6->CNT;
+	}
+	else if(timer_id == 2){
+		CR = TIM7->CNT;
+	}
+	time = CR;
+	return time;
+}
 
 void _platform_timer_stopReset(int timer_id){
 	if (timer_id == 1){
@@ -257,7 +269,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	 }
  }
  if (htim->Instance == TIM7){
-	 xSemaphoreGive(intr2ssTimer2_sh);
+	//  xSemaphoreGive(intr2ssTimer2_sh);
  }
 }
 
@@ -624,7 +636,7 @@ static void MX_TIM7_Init(void)
 {
   TIM_MasterConfigTypeDef sMasterConfig = {0};
   htim7.Instance = TIM7;
-  htim7.Init.Prescaler = 15999;		//1KHz
+  htim7.Init.Prescaler = 15;		//100KHz
   htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim7.Init.Period = 65535;
   htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;

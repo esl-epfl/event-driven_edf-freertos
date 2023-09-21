@@ -90,6 +90,7 @@ unsigned int _platform_timer_readMaxUs(int timer_id);
 unsigned int _platform_timer_readMax(int timer_id);
 unsigned int _platform_timer_readMs(int timer_id);
 unsigned int _platform_timer_readUs(int timer_id);
+unsigned int _platform_timer_read(int timer_id);
 void _platform_timer_stopReset(int timer_id);
 void _platform_timer_count(int timer_id, unsigned int count_val);
 

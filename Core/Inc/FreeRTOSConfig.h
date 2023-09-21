@@ -56,7 +56,7 @@
 #define configENABLE_FPU                         0
 #define configENABLE_MPU                         0
 
-#define configDYNAMIC_SCHEDULING				  0		/*ht: added to not change the fixed priority based parts*/
+#define configDYNAMIC_SCHEDULING				  1		/*ht: added to not change the fixed priority based parts*/
 #define configUSE_LOG_SEARCH					 0		/*ht: I added this */
 #define INCLUDE_vTaskDeadlineRelSet       1   /*ht*/
 
@@ -67,7 +67,7 @@
 #define configUSE_TICK_HOOK                      0
 #define configCPU_CLOCK_HZ                       ( SystemCoreClock )
 #define configTICK_RATE_HZ                       ((TickType_t)10000)
-#define configMAX_PRIORITIES                     ( 15 )
+#define configMAX_PRIORITIES                     ( 12 )
 #define configMINIMAL_STACK_SIZE                 ((uint16_t)200)
 #define configTOTAL_HEAP_SIZE                    ((size_t)32000)//((size_t)20000)
 #define configMAX_TASK_NAME_LEN                  ( 16 )

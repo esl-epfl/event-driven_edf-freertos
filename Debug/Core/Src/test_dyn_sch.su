@@ -1,0 +1,6 @@
+test_dyn_sch.c:337:7:T1	16	static
+test_dyn_sch.c:346:7:T2	16	static
+test_dyn_sch.c:354:7:T3	16	static
+test_dyn_sch.c:362:7:T4	16	static
+test_dyn_sch.c:370:7:T5	16	static
+test_dyn_sch.c:380:7:adding_tasks	24	static

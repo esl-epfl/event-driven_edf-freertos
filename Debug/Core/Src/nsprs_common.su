@@ -1,0 +1,5 @@
+nsprs_common.c:4:6:set__bit	16	static
+nsprs_common.c:7:6:clear__bit	16	static
+nsprs_common.c:10:6:check__bit	16	static
+nsprs_common.c:18:6:load_reg	16	static
+nsprs_common.c:24:6:write_on_log	16	static

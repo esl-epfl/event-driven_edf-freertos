@@ -1,0 +1,3 @@
+test_dyn_sch_queue_rcv.c:11:6:T1	24	static
+test_dyn_sch_queue_rcv.c:28:6:T2	24	static
+test_dyn_sch_queue_rcv.c:45:6:adding_tasks	32	static

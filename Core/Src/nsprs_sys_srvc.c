@@ -33,29 +33,28 @@ int ssTemp_periodMs = 100;
 
 //================= for the test
 //=================================
-
-// #define number_of_tasks 14
-// #define number_of_issues 90
-// #define test_duration_ms 73499
-// int ids[number_of_tasks] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13};
-// int exe_time_ms[number_of_tasks] = {351,952,749,969,1062,577,569,758,394,1079,934,368,715,337};
-// int slack_ms[number_of_tasks] = {1102,4075,3161,3374,3869,4856,3216,3638,1528,3565,2585,1707,4478,2006};
-// int rel_deadline_ms[number_of_tasks] = {1453,5027,3910,4343,4931,5433,3785,4396,1922,4644,3519,2075,5193,2343};
-// int priority[number_of_tasks] = {14,3,8,7,4,1,9,6,13,5,10,12,2,11};
-// int issue_ms[number_of_issues] = {112,538,1623,5936,5991,6786,10176,11035,12767,13324,13651,14394,15064,15550,16358,16559,16699,17407,18620,19668,19900,22545,22702,23231,23294,23411,23711,24381,24974,27261,27601,27683,27743,28063,29704,29770,29925,30506,31617,31724,32568,33946,35268,35958,36681,37294,37764,38808,39023,39223,39228,39745,39984,41006,42130,43279,43914,44308,44869,44949,45107,45575,46032,46376,47145,47262,47301,47389,47945,48218,48603,49027,50038,50305,50432,51310,51343,51927,52135,52300,53161,53909,54392,55129,55260,56364,56797,57598,58360,59103};
-// int issue_id[number_of_issues] = {7,3,6,7,10,8,2,12,11,10,6,3,0,13,9,7,12,2,10,1,8,10,5,3,6,12,4,9,13,10,0,6,13,2,0,5,3,13,4,1,1,8,2,13,7,11,5,10,6,9,2,8,11,3,11,6,8,5,13,1,10,2,11,3,10,13,6,12,8,7,4,6,5,9,0,13,3,0,8,1,6,7,1,0,9,3,5,2,0,7};
-
-#define number_of_tasks 6
+#define number_of_tasks 10
 #define number_of_issues 100
-#define test_duration_ms 17073
-int ids[number_of_tasks] = {0,1,2,3,4,5};
+#define test_duration_ms 22653
+int ids[number_of_tasks] = {0,1,2,3,4,5,6,7,8,9};
+int exe_time_ms[number_of_tasks] = {443,209,302,253,1069,228,221,726,310,951};
+int slack_ms[number_of_tasks] = {1258,3695,2420,946,3872,4772,723,3684,3652,2693};
+int rel_deadline_ms[number_of_tasks] = {1701,3904,2722,1199,4941,5000,944,4410,3962,3644};
+int priority[number_of_tasks] = {8,5,7,9,2,1,10,3,4,6};
+int issue_ms[number_of_issues] = {91,474,574,1283,1314,1426,1450,1456,1483,1855,1858,2000,2112,2139,2158,2405,2488,2509,2516,2534,2811,2875,3051,3103,3349,3437,3497,3562,3662,3708,3798,3801,3818,3832,3887,3990,4059,4105,4118,4290,4779,4786,4849,4983,5027,5039,5041,5521,5613,5756,5784,5817,5972,6003,6090,6162,6220,6333,6478,6529,6549,6609,6663,6693,6779,6882,7142,7162,7217,7264,7352,7501,7528,7596,7696,7820,7942,7954,8207,8426,8499,8555,8803,8903,8937,9024,9128,9141,9194,9219,9243,9282,9316,9444,9446,9492,9653,9725,9810,9931};
+int issue_id[number_of_issues] = {2,7,8,3,0,1,5,4,8,4,4,9,6,1,6,4,4,3,8,7,5,2,9,6,9,2,2,9,6,1,0,1,3,3,3,3,2,9,0,0,6,0,2,9,2,7,7,3,6,3,0,8,2,9,6,1,1,3,7,2,6,0,6,6,7,7,8,6,6,6,3,6,4,6,7,5,6,0,0,4,5,3,4,6,3,0,3,6,3,4,6,0,2,4,0,4,9,9,3,2};
 
-int exe_time_ms[number_of_tasks] = {2,1,2,10,20,90};
+// #define number_of_tasks 6
+// #define number_of_issues 100
+// #define test_duration_ms 17073
+// int ids[number_of_tasks] = {0,1,2,3,4,5};
 
-int rel_deadline_ms[number_of_tasks] = {6,6,90,95,80,100};
-int priority[number_of_tasks] = {5,5,5,5,5,5};//{5,4,2,1,3,6};
-int issue_ms[number_of_issues] = {32,159,212,255,335,343,374,377,430,484,542,585,643,721,776,835,867,1022,1243,1270,1310,1329,1479,1491,1533,1536,1585,1612,1666,1963,2112,2183,2224,2274,2325,2346,2362,2484,2523,2565,2583,2588,2596,2738,2750,2944,3009,3260,3361,3475,3661,3833,3917,3971,3981,4085,4095,4283,4364,4426,4510,4546,4552,4685,4719,4732,4856,4898,4919,4986,5096,5133,5213,5262,5272,5384,5502,5511,5529,5539,5609,5706,5747,5751,5806,5845,5861,5934,6012,6216,6269,6429,6597,6598,6727,6730,6745,6752,6910,6983};
-int issue_id[number_of_issues] = {3,4,5,2,4,5,3,2,2,3,2,3,2,5,2,4,2,5,3,4,2,5,4,3,5,2,5,4,3,5,2,5,4,3,4,2,2,4,5,3,2,2,3,4,3,3,4,5,2,5,3,4,2,5,3,5,4,3,4,5,2,4,5,5,2,3,4,5,3,4,5,2,4,5,2,2,5,2,4,3,5,4,3,5,2,3,5,2,4,5,2,3,5,2,3,4,5,2,4,2};
+// int exe_time_ms[number_of_tasks] = {2,1,2,10,20,90};
+
+// int rel_deadline_ms[number_of_tasks] = {6,6,90,95,80,100};
+// int priority[number_of_tasks] = {5,4,2,1,3,6};//{5,4,2,1,3,6};
+// int issue_ms[number_of_issues] = {32,159,212,255,335,343,374,377,430,484,542,585,643,721,776,835,867,1022,1243,1270,1310,1329,1479,1491,1533,1536,1585,1612,1666,1963,2112,2183,2224,2274,2325,2346,2362,2484,2523,2565,2583,2588,2596,2738,2750,2944,3009,3260,3361,3475,3661,3833,3917,3971,3981,4085,4095,4283,4364,4426,4510,4546,4552,4685,4719,4732,4856,4898,4919,4986,5096,5133,5213,5262,5272,5384,5502,5511,5529,5539,5609,5706,5747,5751,5806,5845,5861,5934,6012,6216,6269,6429,6597,6598,6727,6730,6745,6752,6910,6983};
+// int issue_id[number_of_issues] = {3,4,5,2,4,5,3,2,2,3,2,3,2,5,2,4,2,5,3,4,2,5,4,3,5,2,5,4,3,5,2,5,4,3,4,2,2,4,5,3,2,2,3,4,3,3,4,5,2,5,3,4,2,5,3,5,4,3,4,5,2,4,5,5,2,3,4,5,3,4,5,2,4,5,2,2,5,2,4,3,5,4,3,5,2,3,5,2,4,5,2,3,5,2,3,4,5,2,4,2};
 
 
 typedef struct TEST_PARAMETERS_{
@@ -64,17 +63,16 @@ typedef struct TEST_PARAMETERS_{
 	
 }TEST_PARAMETERS;
 
-// TEST_PARAMETERS test_parameters = {
-// 	{0,0,0,0,0,0,0,0,0,0},
-// 	{1,1,1,1,1,1,1,1,1,1}
-// };
 TEST_PARAMETERS test_parameters;
 
-// typedef struct TASK_PARAMETERS_{
-// 	int id ;
-// 	int exe ;
-// }TASK_PARAMETERS;
-// TASK_PARAMETERS task_parameters = {.id=0, .exe=0};
+extern unsigned int time_start; //ht: timing
+extern unsigned int time_end;
+extern unsigned int time_overal;
+extern int time_number;
+extern unsigned int time_overal_add;
+extern int time_number_add;
+
+
 
 
 
@@ -293,6 +291,13 @@ void ssTimer_t( void *pvParameters ){
 	int timer_id = 1;
 	unsigned int cnt_val = (1000*timer_readFreqKHz(timer_id))/(data_timer.tick_freq); //why should I multiply by
 	timer_count(timer_id, cnt_val);
+
+	timer_id = 2;
+	cnt_val = timer_readMax(timer_id);
+	timer_count(timer_id, cnt_val);
+
+
+
 	printf("\r\n");
 	for (int i=0; i<number_of_tasks; i++){
 		test_parameters.finished[i]=1;
@@ -310,19 +315,19 @@ void ssTimer_t( void *pvParameters ){
 	while(1){
 		data_timer.time = data_timer.time + 1;
 
-		if (data_timer.time%20==0){
-			//heater, id=0, pump, id=1
-			for (int i=0; i<2; i++){
-				if (test_parameters.finished[i] == 0){	//issueing the task
-						test_parameters.missed[i]++;
-				}
-				else{
-					test_parameters.finished[i] = 0;
-					vTaskResume(dummy_task_handler[i]);
-				}
-			}
+		// if (data_timer.time%20==0){	
+		// 	//heater, id=0, pump, id=1
+		// 	for (int i=0; i<2; i++){
+		// 		if (test_parameters.finished[i] == 0){	//issueing the task
+		// 				test_parameters.missed[i]++;
+		// 		}
+		// 		else{
+		// 			test_parameters.finished[i] = 0;
+		// 			vTaskResume(dummy_task_handler[i]);
+		// 		}
+		// 	}
+		// }
 
-		}
 
 		// if (data_timer.time%520==0){
 		// 	if (data_flow.en == 1){		
@@ -350,30 +355,34 @@ void ssTimer_t( void *pvParameters ){
 		// 	}
 		// }			
 
-		if (data_timer.time == issue_ms[id_time]){
-			id_task = issue_id[id_time];					//getting the task
-			if (test_parameters.finished[id_task] == 0){	//issueing the task
-					test_parameters.missed[id_task]++;
-			}
-			else{
-				test_parameters.finished[id_task] = 0;
-				vTaskResume(dummy_task_handler[id_task]);
-			}
-			if (id_time < number_of_issues-1){			//checking for last one
-				id_time++;
-			}
-
-		}
+		// if (data_timer.time == issue_ms[id_time]){
+		// 	id_task = issue_id[id_time];					//getting the task
+		// 	if (test_parameters.finished[id_task] == 0){	//issueing the task
+		// 			test_parameters.missed[id_task]++;
+		// 	}
+		// 	else{
+		// 		test_parameters.finished[id_task] = 0;
+		// 		// printf("issue: %lu\r\n", timer_read(2));
+		// 		// overal_issue_time = timer_read(2);
+		// 		vTaskResume(dummy_task_handler[id_task]);
+				
+		// 	}
+		// 	if (id_time < number_of_issues-1){			//checking for last one
+		// 		id_time++;
+		// 	}
+		// }
 
 		if (data_timer.time == test_duration_ms){
 			printf("======= test duration: %d, dynmaic scheduler: %d, number of issues: %d, number of tasks: %d\r\n", 
 				test_duration_ms, configDYNAMIC_SCHEDULING, number_of_issues, number_of_tasks);
 				int totall=0;
 				for (int i = 0; i<number_of_tasks; i++){
-					printf("task %d, number of misses: %d\r\n", i, test_parameters.missed[i]);
+					// printf("task %d, number of misses: %d\r\n", i, test_parameters.missed[i]);
 					totall += test_parameters.missed[i];
 				}
 				printf ("totall misses: %d\r\n", totall);
+				printf("time totall cs:%lu, number:%d, avg:%lu\r\n", time_overal, time_number, time_overal/time_number);
+				printf("time totall insert:	%lu, number:%d, avg:%lu\r\n", time_overal_add, time_number_add, time_overal_add/time_number_add);
 				while(1);
 
 		}
@@ -842,57 +851,6 @@ void ssTemp_t(void *pvParameters){
 
 }
 
-// void ssTemp_t(void *pvParameters){
-// 	//modes: continous updating, one time measurement, sleep
-// 	ssTemp_d * p_data;
-// 	enum ssTempStates{
-// 		sleep,
-// 		active,
-// 		rcvdCmd
-// 	};
-// 	enum ssTempStates pre_stable_state, state;
-// 	state = sleep;
-// //	pre_stable_state = sleep;
-// 	int temp_deg = 0;
-// //	uint32_t updating_time = 150; //updating time in ms
-
-// 	while(1){
-// 		vTaskDelay(pdMS_TO_TICKS(ssTemp_periodMs));
-// 		switch(state){
-
-// 		case sleep:
-// 			if(xQueueReceive(ssTemp_qh, &(p_data), portMAX_DELAY) == 1){
-// 				state = rcvdCmd;
-// 			}
-// 			break;
-
-
-// 		case active:
-// 			temp_deg = readTemp();
-// //			temp_deg = 0;		//todo: for debuging, remove in future :)
-// 			global_vars.temperature = temp_deg;
-// 			if(xQueueReceive(ssTemp_qh, &(p_data), 0) == 1){
-// 				state = rcvdCmd;
-// 			}
-// 			break;
-
-// 		case rcvdCmd:
-// 			if (p_data->cmd == params.sys_srvc.temp.cmd.sleep){ //go to sleep
-// 				state = sleep;
-// 			}
-// 			else if (p_data->cmd == params.sys_srvc.temp.cmd.activate){
-// 				state = active;
-// 			}
-// 			else {
-// 				state = active;
-// 			}
-// 			p_data->updatedTemp = temp_deg;
-// 			xSemaphoreGive(p_data->callingTaskSem);
-// 			break;
-// 		}
-// 	}
-// }
-
 /*
  * ================================================================
  * ================================================================
@@ -905,7 +863,7 @@ void task_general(void *pvParameters){
 	// TASK_PARAMETERS * parameters = (TASK_PARAMETERS *) pvParameters;
 	int * p_id =  (int *) pvParameters;
 	int id = *p_id;
-	 printf("initialize\tid:%d, exe:%d\r\n", id, exe_time_ms[id]);
+	// printf("initialize\tid:%d, exe:%d\r\n", id, exe_time_ms[id]);
 	// int inner = 1029;//1000;
 	// int outer = (exe_time_ms[id]*500)/(400);		//500 equal to 400ms
 	int outer = exe_time_ms[id];
@@ -915,6 +873,16 @@ void task_general(void *pvParameters){
 
 	while(1){
 		// start = xTaskGetTickCount(); //r
+		// overal_run_time = timer_read(2);
+		// if (overal_run_time>overal_issue_time){
+		// 	overal_scheduling_time = overal_run_time-overal_issue_time;
+		// }
+		// else{
+		// 	overal_scheduling_time = timer_readMax(2)-overal_issue_time+overal_run_time;
+		// }
+		
+		// printf("scheduling time: %lu X10us\r\n", overal_scheduling_time);
+		
 		for (int j=0; j<outer; j++){
 			for (int i =0; i<1070; i++){
 
@@ -929,10 +897,10 @@ void task_general(void *pvParameters){
 		// finish_time = xTaskGetTickCount();
 		if(finish_time>uxTaskDeadlineAbsGet(dummy_task_handler[id])){
 			test_parameters.missed[id]++;
-			 printf("task%d, missed, deadline=%lu, finished=%lu\r\n", id, uxTaskDeadlineAbsGet(dummy_task_handler[id]), finish_time);
+			// printf("task%d, missed, deadline=%lu, finished=%lu\r\n", id, uxTaskDeadlineAbsGet(dummy_task_handler[id]), finish_time);
 		}
 		else{
-			 printf("task%d, passed, deadline=%lu, finished=%lu\r\n", id, uxTaskDeadlineAbsGet(dummy_task_handler[id]), finish_time);
+			// printf("task%d, passed, deadline=%lu, finished=%lu\r\n", id, uxTaskDeadlineAbsGet(dummy_task_handler[id]), finish_time);
 		}
 		test_parameters.finished[id] = 1;
 

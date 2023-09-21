@@ -27,6 +27,7 @@ unsigned int timer_readMaxUs(int timer_id);
 unsigned int timer_readMax(int timer_id);
 unsigned int timer_readMs(int timer_id);
 unsigned int timer_readUs(int timer_id);
+unsigned int timer_read(int timer_id);
 void timer_stopReset(int timer_id);
 void timer_count(int timer_id, unsigned int count_val);
 
