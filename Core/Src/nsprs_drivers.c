@@ -60,14 +60,6 @@ int readTemp(void){
 	return _platform_readTemp();
 }
 
-////signaling to pump and heater
-//void sig2pump(char zc){
-//	_platform_sig2pump(zc);
-//}
-//
-//void sig2tb(char zc){
-//	_platform_sig2tb(zc);
-//}
 
 //gpio
 void setPump1(void){
