@@ -1,0 +1,11 @@
+*.ld
+*.launch
+*.ioc
+*.cfg
+Debug/
+Drivers/
+.DS_Store
+.cproject
+.mxproject
+.project
+.settings/
