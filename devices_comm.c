@@ -1,6 +1,6 @@
-#include "nsprs_comm.h"
-#include "nsprs_params.h"
-#include "nsprs_common.h"
+#include "devices_comm.h"
+#include "devices_params.h"
+#include "devices_common.h"
 
 void launch_comm(void){
 	//== mutexes

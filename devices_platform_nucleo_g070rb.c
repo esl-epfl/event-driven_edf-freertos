@@ -1,9 +1,9 @@
-#include "nsprs_platform_nucleo_g070rb.h"
-#include "nsprs_params.h"
-#include "nsprs_common.h"
-#include "nsprs_comm.h"
+#include "devices_platform_nucleo_g070rb.h"
+#include "devices_params.h"
+#include "devices_common.h"
+#include "devices_comm.h"
 
-#include "nsprs_sys_srvc.h"
+#include "devices_sys_srvc.h"
 
 //#include "retarget.h"
 //#include "main.h"
@@ -282,18 +282,18 @@ void EXTI0_1_IRQHandler(void) // interrupt routine
 	char p_data;
 	  if ((EXTI->RPR1 & (in_nespresso_Pin)) != 0x00u){
 		EXTI->RPR1 = (in_nespresso_Pin);
-		// printf("nsprs release\r\n");
+		// printf("devices release\r\n");
 		if (data_hmi.en == 1){
 			data_hmi.data_from_isr = 1<<NSPRS_RELEASED;
-			xTaskResumeFromISR(ssHMI_b_nsprs_task_handler);
+			xTaskResumeFromISR(ssHMI_b_devices_task_handler);
 		}
 	  }
 	  else if ((EXTI->FPR1 & (in_nespresso_Pin)) != 0x00u){
 		EXTI->FPR1 = (in_nespresso_Pin);
-		// printf("nsprs press\r\n");
+		// printf("devices press\r\n");
 		if (data_hmi.en == 1){
 			data_hmi.data_from_isr = 1<<NSPRS_PRESSED;
-			xTaskResumeFromISR(ssHMI_b_nsprs_task_handler);
+			xTaskResumeFromISR(ssHMI_b_devices_task_handler);
 		}
 	  }
 

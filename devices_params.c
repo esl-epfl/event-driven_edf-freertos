@@ -1,4 +1,4 @@
-#include "nsprs_params.h"
+#include "devices_params.h"
 
 asStates asState = asStateInit;
 

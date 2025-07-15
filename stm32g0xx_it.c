@@ -23,7 +23,7 @@
 #include "stm32g0xx_it.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "nsprs_platform_nucleo_g070rb.h"
+#include "devices_platform_nucleo_g070rb.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */

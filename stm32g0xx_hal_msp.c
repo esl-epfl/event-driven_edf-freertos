@@ -21,7 +21,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "nsprs_platform_nucleo_g070rb.h"
+#include "devices_platform_nucleo_g070rb.h"
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */

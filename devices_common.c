@@ -1,5 +1,5 @@
-#include "nsprs_params.h"
-#include "nsprs_common.h"
+#include "devices_params.h"
+#include "devices_common.h"
 
 void set__bit(unsigned int * regAddr, char bit){
 	*regAddr = *regAddr | (1<<bit);
