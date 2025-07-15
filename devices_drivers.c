@@ -1,14 +1,14 @@
-#include "nsprs_drivers.h"
-#include "nsprs_params.h"
-#include "nsprs_common.h"
-//#include "nsprs_com.h"
+#include "devices_drivers.h"
+#include "devices_params.h"
+#include "devices_common.h"
+//#include "devices_com.h"
 
 #if PLATFORM == MB_PYNQZ2
-#include "nsprs_platform_mb.h"
+#include "devices_platform_mb.h"
 #elif PLATFORM == ARMCM0_NUCLEO_F070RB
-#include <nsprs_platform_nucleo_g070rb.h>
+#include <devices_platform_nucleo_g070rb.h>
 #elif PLATFORM == NUCLEO_G070RB
-#include "nsprs_platform_nucleo_g070rb.h"
+#include "devices_platform_nucleo_g070rb.h"
 #endif
 
 //all the hw initializations

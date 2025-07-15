@@ -5,7 +5,7 @@
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
-#include "nsprs_params.h"
+#include "devices_params.h"
 
 
 //unsigned int tempChangeRes(unsigned int * regAddr, int bit);

@@ -5,7 +5,7 @@
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
-#include "nsprs_params.h"
+#include "devices_params.h"
 
 //=========== bitwise functions
 void set__bit(unsigned int * regAddr, char bit);

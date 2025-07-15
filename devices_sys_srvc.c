@@ -1,9 +1,9 @@
-#include "nsprs_params.h"
-#include "nsprs_drivers.h"
-#include "nsprs_sys_srvc.h"
-#include "nsprs_comm.h"
-#include "nsprs_params.h"
-#include "nsprs_common.h"
+#include "devices_params.h"
+#include "devices_drivers.h"
+#include "devices_sys_srvc.h"
+#include "devices_comm.h"
+#include "devices_params.h"
+#include "devices_common.h"
 #include "stm32_trg_driver.h"
 
 //================================================================================================================================
@@ -73,8 +73,8 @@ void launch_ssTimer (void){
 void launch_ssFlow (void){
 	xTaskCreate	(ssFlow_t, (const char *) "sys srvc, Flow", configMINIMAL_STACK_SIZE, (void *) NULL, HIGH_PRIORITY, &ssFlow_task_handler, 100);
 }
-void launch_ssHMI_b_nsprs (void){
-	xTaskCreate	(ssHMI_b_nsprs_t, (const char *) "sys srvc, HMI- nsprs", configMINIMAL_STACK_SIZE, (void *) NULL, HIGH_PRIORITY,  &ssHMI_b_nsprs_task_handler, 100);
+void launch_ssHMI_b_devices (void){
+	xTaskCreate	(ssHMI_b_devices_t, (const char *) "sys srvc, HMI- devices", configMINIMAL_STACK_SIZE, (void *) NULL, HIGH_PRIORITY,  &ssHMI_b_devices_task_handler, 100);
 }
 void launch_ssHMI_b_esprs (void){
 	xTaskCreate	(ssHMI_b_esprs_t, (const char *) "sys srvc, HMI- esprs", configMINIMAL_STACK_SIZE, (void *) NULL, HIGH_PRIORITY,  &ssHMI_b_esprs_task_handler, 100);
@@ -107,7 +107,7 @@ void launch_dummy_tasks(void){
 void launch_ssAll(void){
 	// launch_ssFlow();
 	launch_ssTimer();
-	// launch_ssHMI_b_nsprs();
+	// launch_ssHMI_b_devices();
 	// launch_ssHMI_b_esprs();
 	// launch_ssHMI_b_lungo();
 	// launch_ssHMI_b_hw();
@@ -249,7 +249,7 @@ DATA_HMI data_hmi= {
 	.time_esprs_ms = 0,
 	.time_lungo_ms = 0,
 	.time_hw_ms = 0,
-	.time_nsprs_ms = 0,
+	.time_devices_ms = 0,
 	.req_brew_esprs = 0,
 	.req_brew_lungo =0,
 	.req_hw = 0,
@@ -257,7 +257,7 @@ DATA_HMI data_hmi= {
 
 };
 
-void ssHMI_b_nsprs_t( void *pvParameters ){
+void ssHMI_b_devices_t( void *pvParameters ){
 
 }
 

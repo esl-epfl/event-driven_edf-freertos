@@ -1,6 +1,6 @@
 #include "stm32_trg_driver.h"
 //#include "main.h"
-//#include "nsprs_platform_nucleo_g070rb.h"
+//#include "devices_platform_nucleo_g070rb.h"
 #include "stm32g0xx_hal.h"
 
 void trg_init_tmr16(void){

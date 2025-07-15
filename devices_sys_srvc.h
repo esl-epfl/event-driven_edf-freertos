@@ -5,7 +5,7 @@
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
-#include "nsprs_comm.h"
+#include "devices_comm.h"
 
 //handlers
 TaskHandle_t ssHeatPump_task_handler;
@@ -21,7 +21,7 @@ TaskHandle_t ssFlow_task_handler;
 TaskHandle_t ssTemp_task_handler;
 TaskHandle_t ssHeatAlg_task_handler;
 
-TaskHandle_t ssHMI_b_nsprs_task_handler;
+TaskHandle_t ssHMI_b_devices_task_handler;
 TaskHandle_t ssHMI_b_esprs_task_handler;
 TaskHandle_t ssHMI_b_lungo_task_handler;
 TaskHandle_t ssHMI_b_hw_task_handler;
@@ -63,7 +63,7 @@ void launch_ssTemp (void);
 void launch_ssHeatAlg (void);
 void launch_ssAll(void);
 
-void launch_ssHMI_b_nsprs (void);
+void launch_ssHMI_b_devices (void);
 void launch_ssHMI_b_esprs (void);
 void launch_ssHMI_b_lungo (void);
 void launch_ssHMI_b_hw (void);
@@ -106,7 +106,7 @@ void ssFlow_t(void *pvParameters);
 void ssTemp_t(void *pvParameters);
 void ssHeatAlg_t(void *pvParameters);
 
-void ssHMI_b_nsprs_t( void *pvParameters);
+void ssHMI_b_devices_t( void *pvParameters);
 void ssHMI_b_esprs_t( void *pvParameters);
 void ssHMI_b_lungo_t( void *pvParameters);
 void ssHMI_b_hw_t( void *pvParameters);
@@ -135,7 +135,7 @@ void dummy9(void *pvParameters);
 //=== internal functions ===
 static int ssTemp_adc2temp(unsigned int adc_val);
 
-static void put_hmi_infor(ssHMI_d * p_data, uint32_t buttons_situation, unsigned int time_corto, unsigned int time_lungo, unsigned int time_hw, unsigned int time_nsprs);
+static void put_hmi_infor(ssHMI_d * p_data, uint32_t buttons_situation, unsigned int time_corto, unsigned int time_lungo, unsigned int time_hw, unsigned int time_devices);
 
 //==== states ====
 typedef enum {
@@ -226,7 +226,7 @@ void hmi_reset(void);
 typedef struct DATA_HMI_{
 	char en;
 	unsigned int 	time_esprs_ms;
-	unsigned int 	time_nsprs_ms;
+	unsigned int 	time_devices_ms;
 	unsigned int 	time_lungo_ms;
 	unsigned int 	time_hw_ms;
 	char req_brew_esprs;
